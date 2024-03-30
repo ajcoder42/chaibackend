@@ -5,6 +5,20 @@ const express = require("express");
 const app = express();
 const port = 4000;
 
+const myPortfolio = [
+  {
+    firstName: "abhishek",
+    lastName: "jha",
+  },
+  {
+    age: 23,
+  },
+  {
+    course: "Btech",
+    branch: "IT",
+  },
+];
+
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
@@ -19,6 +33,10 @@ app.get("/youtube", (req, res) => {
 
 app.get("/login", (req, res) => {
   res.send("<h1>please Login to chai aur code</h1>");
+});
+
+app.get("/portfolio", (req, res) => {
+  res.json(myPortfolio);
 });
 
 app.listen(process.env.PORT, () => {
